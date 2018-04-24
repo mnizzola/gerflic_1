@@ -33,40 +33,52 @@ int main()
 
     */
 
-    for(i=0; i<5; i++){
-       printf("Serie: %s\n",listaDeSeries[i].nombre);
-    }
-
-    for(i=0; i<5; i++){
-       printf("usuario: %s\n",listaDeUsuarios[i].nombre);
-    }
-
-   for(i=0; i<5; i++)
+    for(i=0; i<TAMSERIE; i++)
     {
+       if(listaDeSeries[i].estado == 1)
+       {
+        printf("Serie: %s\n",listaDeSeries[i].nombre);
+       }
+    }
 
-        printf("\n usuario: %s \n",listaDeUsuarios[i].nombre);
+    for(i=0; i<TAMUSUARIO; i++)
+    {
+       if(listaDeUsuarios[i].estado == 1)
+       {
+        printf("usuario: %s\n",listaDeUsuarios[i].nombre);
+       }
+    }
 
-        for(j=0; j<5; j++)
+   for(i=0; i<TAMUSUARIO; i++)
+    {
+        if(listaDeUsuarios[i].estado == 1)
         {
-            if (listaDeSeries[j].idSerie == listaDeUsuarios[i].idSerie)
+            printf("\n usuario: %s \n",listaDeUsuarios[i].nombre);
+        }
+        for(j=0; j<TAMSERIE; j++)
+        {
+            if (listaDeSeries[j].idSerie == listaDeUsuarios[i].idSerie && listaDeSeries[j].estado == 1)
             {
                 printf("Serie: %s\n",listaDeSeries[i].nombre);
+                break;
             }
         }
 
 
     }
 
-    for(i=0; i<5; i++)
+    for(i=0; i<TAMSERIE; i++)
     {
-
-        printf("\n Serie: %s \n",listaDeSeries[i].nombre);
-
-        for(j=0; j<5; j++)
+        if(listaDeSeries[i].estado == 1)
         {
-            if (listaDeUsuarios[j].idSerie == listaDeSeries[i].idSerie)
+            printf("\n Serie: %s \n",listaDeSeries[i].nombre);
+        }
+        for(j=0; j<TAMUSUARIO; j++)
+        {
+            if (listaDeUsuarios[j].idSerie == listaDeSeries[i].idSerie && listaDeUsuarios[j] == 1)
             {
                 printf("usuario: %s\n",listaDeUsuarios[i].nombre);
+                break;
             }
         }
 
